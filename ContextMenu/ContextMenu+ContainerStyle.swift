@@ -43,6 +43,10 @@ extension ContextMenu {
         /// A flag indicating if device gyro effects should be applied.
         /// If the user has enabled Reduce Motion in Settings, this will be ignored.
         public let motionEffect: Bool
+        
+        public let borderColor: UIColor
+        
+        public let borderWidth: CGFloat
 
         public init(
             cornerRadius: CGFloat = 8,
@@ -54,6 +58,8 @@ extension ContextMenu {
             edgePadding: CGFloat = 15,
             backgroundColor: UIColor = .white,
             overlayColor: UIColor = UIColor(white: 0, alpha: 0.3),
+            borderColor: UIColor = UIColor.black.withAlphaComponent(1),
+            borderWidth: CGFloat = 0,
             motionEffect: Bool = true
             ) {
             self.cornerRadius = cornerRadius
@@ -66,6 +72,8 @@ extension ContextMenu {
             self.backgroundColor = backgroundColor
             self.overlayColor = overlayColor
             self.motionEffect = motionEffect
+            self.borderColor = borderColor
+            self.borderWidth = borderWidth
         }
 
     }

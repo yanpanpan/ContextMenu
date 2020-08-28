@@ -6,13 +6,12 @@
 //  Copyright © 2018 Ryan Nystrom. All rights reserved.
 //
 
-import UIKit
 import ContextMenu
+import UIKit
 
 class ViewController: UIViewController, ContextMenuDelegate {
-
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var keyboardButton: UIButton!
+    @IBOutlet var button: UIButton!
+    @IBOutlet var keyboardButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,11 @@ class ViewController: UIViewController, ContextMenuDelegate {
             sourceViewController: self,
             viewController: MenuViewController(),
             options: ContextMenu.Options(
-                containerStyle: ContextMenu.ContainerStyle(
-                    backgroundColor: UIColor(red: 41/255.0, green: 45/255.0, blue: 53/255.0, alpha: 1)
+                containerStyle:
+                ContextMenu.ContainerStyle(
+                    backgroundColor: UIColor(red: 41/255.0, green: 45/255.0, blue: 53/255.0, alpha: 1),
+                    borderColor: UIColor.red,
+                    borderWidth: 1
                 ),
                 menuStyle: .default,
                 hapticsStyle: .medium
@@ -48,7 +50,7 @@ class ViewController: UIViewController, ContextMenuDelegate {
         )
     }
 
-    //MARK: ContextMenuDelegate
+    // MARK: ContextMenuDelegate
 
     func contextMenuWillDismiss(viewController: UIViewController, animated: Bool) {
         print("will dismiss")
@@ -57,6 +59,4 @@ class ViewController: UIViewController, ContextMenuDelegate {
     func contextMenuDidDismiss(viewController: UIViewController, animated: Bool) {
         print("did dismiss")
     }
-
 }
-

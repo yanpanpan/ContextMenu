@@ -38,6 +38,8 @@ class ClippedContainerViewController: UIViewController {
         view.layer.shadowOpacity = options.containerStyle.shadowOpacity
         view.layer.shadowOffset = options.containerStyle.shadowOffset
         view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.borderColor = options.containerStyle.borderColor.cgColor
+        view.layer.borderWidth = options.containerStyle.borderWidth
         view.backgroundColor = options.containerStyle.backgroundColor
 
         if options.containerStyle.motionEffect && UIAccessibility.isReduceMotionEnabled == false {
